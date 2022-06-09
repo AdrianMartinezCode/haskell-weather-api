@@ -1,0 +1,5 @@
+apiToken=#=ca902e41ad5129ad44f8cd22cacfc4fb
+protocol=#=http
+weatherHost=#=api.openweathermap.org
+apiPath=#=/data/2.5/weather
+location=#=Barcelona,es

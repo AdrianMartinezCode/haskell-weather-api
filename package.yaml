@@ -21,7 +21,6 @@ description:         Please see the README on GitHub at <https://github.com/gith
 
 dependencies:
 - base >= 4.7 && < 5
-- bytestring
 - http-conduit
 - HTTP
 - aeson
@@ -29,28 +28,47 @@ dependencies:
 - containers
 - regex-compat
 - regex-base
+- mysql-simple
+- servant
+- servant-server
+- servant-auth
+- servant-auth-server
+- warp
+- wai
+- wai-extra
+- wai-middleware-static
+- text
+- bytestring
+- jwt
+- mysql-simple
+- persistent
+- persistent-mysql
+- persistent-template
+- data-default
+- time
+- io-streams
+- mysql
 
 library:
   source-dirs: src
+  ghc-options:
+    - -O2
+  default-extensions:
+    - DataKinds
+    - DeriveDataTypeable
+    - DeriveGeneric
+    - GeneralizedNewtypeDeriving
+    - OverloadedStrings
+    - RecordWildCards
+    - TemplateHaskell
+    - TypeFamilies
+    - FlexibleInstances
 
 executables:
-  weather-api-exe:
-    main:                Main.hs
-    source-dirs:         app
+  your-project-exe:
+    main: Main.hs
+    source-dirs: app
     ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
-    dependencies:
-    - weather-api
-
-tests:
-  weather-api-test:
-    main:                Spec.hs
-    source-dirs:         test
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
-    dependencies:
-    - weather-api
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
